@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>MySpace.com - Aragorn, syn Arathornův - 86/M - Středozemě</title>
+  <style>
+    /* 2005 Authentic MySpace Styling with Dark Green, Brown & Gray Theme */
+    body {
+      background-color: #0d1a10;
+      background-image: radial-gradient(#1c3320 15%, transparent 16%), radial-gradient(#142617 15%, transparent 16%);
+      background-size: 60px 60px;
+      background-position: 0 0, 30px 30px;
+      color: #d9d2c5;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: #8bb38a;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      color: #c2b280;
+      text-decoration: underline;
+    }
+
+    /* Top MySpace Header Nav */
+    .myspace-header {
+      background: #1b3322;
+      border-bottom: 2px solid #3d2b1f;
+      padding: 6px 15px;
+      color: #e2dacd;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .myspace-logo {
+      font-family: 'Comic Sans MS', 'Trebuchet MS', sans-serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffffff;
+      letter-spacing: -1px;
+    }
+    .myspace-logo span {
+      color: #8bb38a;
+    }
+    .top-search {
+      font-size: 11px;
+    }
+    .top-search input[type="text"] {
+      font-size: 10px;
+      background: #2a3a2c;
+      border: 1px solid #4d5e4f;
+      color: #fff;
+      padding: 2px;
+    }
+    .top-search button {
+      font-size: 10px;
+      background: #4a382a;
+      color: #fff;
+      border: 1px solid #6b5340;
+      cursor: pointer;
+    }
+
+    /* Friend Request Alert Banner */
+    .alert-bar {
+      width: 800px;
+      margin: 10px auto 0 auto;
+      background-color: #4a2c11;
+      border: 2px dashed #b8860b;
+      padding: 8px 12px;
+      color: #fff8dc;
+      font-weight: bold;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0px 0px 8px rgba(0,0,0,0.6);
+    }
+    .alert-btn {
+      background: #6e4723;
+      color: #ffffff;
+      border: 1px solid #a3723d;
+      padding: 3px 8px;
+      font-size: 11px;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+
+    /* Container */
+    .container {
+      width: 800px;
+      margin: 15px auto;
+      background-color: #17261a;
+      border: 2px solid #3d2b1f;
+      padding: 12px;
+      box-shadow: 0px 0px 15px #000;
+    }
+
+    /* Layout Table */
+    table.main-layout {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    td.left-col {
+      width: 310px;
+      vertical-align: top;
+      padding-right: 15px;
+    }
+    td.right-col {
+      width: 460px;
+      vertical-align: top;
+    }
+
+    /* Section Boxes */
+    .profile-box {
+      border: 2px solid #3e4a3d;
+      background-color: #213324;
+      margin-bottom: 15px;
+    }
+    .profile-box-header {
+      background-color: #38281d;
+      color: #e5d4c0;
+      font-weight: bold;
+      padding: 4px 8px;
+      font-size: 12px;
+      border-bottom: 1px solid #574030;
+    }
+    .profile-box-content {
+      padding: 8px;
+    }
+
+    /* Left Profile Details */
+    .user-name {
+      font-size: 18px;
+      font-weight: bold;
+      color: #e8d8b8;
+      margin-bottom: 5px;
+    }
+    .profile-pic {
+      width: 100%;
+      max-width: 280px;
+      border: 2px solid #4a382a;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .contact-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 3px;
+      margin-top: 10px;
+    }
+    .contact-table td {
+      background-color: #2b3d2f;
+      border: 1px solid #415746;
+      text-align: center;
+      padding: 6px;
+      font-size: 11px;
+    }
+
+    .info-table {
+      width: 100%;
+      font-size: 11px;
+      border-collapse: collapse;
+    }
+    .info-table td {
+      padding: 3px 4px;
+      vertical-align: top;
+    }
+    .info-table td.label {
+      font-weight: bold;
+      color: #b5a48b;
+      width: 40%;
+      background-color: #1a281c;
+      border: 1px solid #2d3e30;
+    }
+    .info-table td.val {
+      background-color: #243627;
+      border: 1px solid #2d3e30;
+      color: #dfd8cb;
+    }
+
+    /* Music Player Widget */
+    .music-player {
+      background: #1c1510;
+      border: 2px solid #574030;
+      padding: 8px;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .player-title {
+      color: #8bb38a;
+      font-weight: bold;
+      font-size: 11px;
+      margin-bottom: 5px;
+    }
+    .player-controls {
+      background: #2b211a;
+      border: 1px solid #473527;
+      padding: 5px;
+      display: inline-block;
+      width: 90%;
+      color: #aaa;
+      font-size: 10px;
+    }
+
+    /* Status & Blurbs */
+    .status-headline {
+      border: 2px solid #4a3728;
+      background: #281d15;
+      padding: 10px;
+      margin-bottom: 15px;
+      font-size: 13px;
+      font-weight: bold;
+      color: #f0e6d2;
+    }
+
+    .blurb-heading {
+      color: #a39277;
+      font-weight: bold;
+      font-size: 13px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+    /* Friends Grid */
+    .friends-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .friend-card {
+      background-color: #1a281d;
+      border: 1px solid #364a38;
+      padding: 6px;
+    }
+    .friend-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border: 1px solid #4a382a;
+      display: block;
+      margin: 0 auto 5px auto;
+    }
+    .friend-name {
+      font-size: 11px;
+      font-weight: bold;
+    }
+
+    /* Comments Section */
+    .comment-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 11px;
+    }
+    .comment-table td {
+      border: 1px solid #3d4f40;
+      padding: 8px;
+      vertical-align: top;
+    }
+    .comment-author {
+      width: 110px;
+      background-color: #1e2c20;
+      text-align: center;
+    }
+    .comment-author img {
+      width: 60px;
+      height: 60px;
+      border: 1px solid #574030;
+      margin-bottom: 3px;
+    }
+    .comment-body {
+      background-color: #243426;
+      color: #dddad0;
+    }
+    .comment-date {
+      color: #8c7b6c;
+      font-size: 10px;
+      margin-bottom: 4px;
+    }
+
+    /* Footer */
+    .myspace-footer {
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 10px;
+      border-top: 1px solid #364a38;
+      font-size: 10px;
+      color: #7a8c7b;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top MySpace Navigation Bar -->
+  <div class="myspace-header">
+    <div class="myspace-logo">MySpace<span>.com</span> | <span style="font-size:12px; font-weight:normal; color:#ccc;">Profil</span></div>
+    <div class="top-search">
+      <a href="#">Domů</a> | <a href="#">Hledat</a> | <a href="#">Procházet</a> | <a href="#">Hudba</a> | <a href="#">Blogy</a>
+    </div>
+  </div>
+
+  <!-- Notification Banner for Pending Request -->
+  <div class="alert-bar">
+    <span>&#128276; <strong>Upozornění na žádost o přátelství:</strong> Eowyn čeká na schválení žádosti o přátelství.</span>
+    <div>
+      <button class="alert-btn" onclick="alert('Žádost přijata!')">Přijmout</button>
+      <button class="alert-btn" onclick="alert('Žádost zamítnuta.')">Odmítnout</button>
+    </div>
+  </div>
+
+  <!-- Main Profile Container -->
+  <div class="container">
+    <table class="main-layout">
+      <tr>
+        <!-- LEFT COLUMN -->
+        <td class="left-col">
+          <div class="user-name">Aragorn, syn Arathornův</div>
+
+          <!-- Primary Profile Picture -->
+          <img src="images/aragorn_portrait.jpg" alt="Aragorn" class="profile-pic">
+
+          <p style="margin: 5px 0 10px 0; font-style: italic; color: #a99a8b;">
+            "Not all those who wander are lost."
+          </p>
+
+          <!-- Contact Box -->
+          <div class="profile-box">
+            <div class="profile-box-header">Kontaktovat uživatele Aragorn</div>
+            <div class="profile-box-content">
+              <table class="contact-table">
+                <tr>
+                  <td><a href="#">Poslat zprávu</a></td>
+                  <td><a href="#">Přidat do přátel</a></td>
+                </tr>
+                <tr>
+                  <td><a href="#">Přidat do oblíbených</a></td>
+                  <td><a href="#">Blokovat uživatele</a></td>
+                </tr>
+                <tr>
+                  <td><a href="#">Poslat holuba / VV</a></td>
+                  <td><a href="#">Doporučit příteli</a></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <!-- Profile Details Box -->
+          <div class="profile-box">
+            <div class="profile-box-header">Aragornovy Informace</div>
+            <div class="profile-box-content">
+              <table class="info-table">
+                <tr>
+                  <td class="label">Věk:</td>
+                  <td class="val">86 let</td>
+                </tr>
+                <tr>
+                  <td class="label">Pohlaví:</td>
+                  <td class="val">Muž</td>
+                </tr>
+                <tr>
+                  <td class="label">Živobytí / Povolání:</td>
+                  <td class="val">Hraničář (Ranger of the North)</td>
+                </tr>
+                <tr>
+                  <td class="label">Přezdívky:</td>
+                  <td class="val">Chodec, Dúnadan, Estel</td>
+                </tr>
+                <tr>
+                  <td class="label">Původ / Bydliště:</td>
+                  <td class="val">Středozemě (Divočina / Eriador)</td>
+                </tr>
+                <tr>
+                  <td class="label">Stav:</td>
+                  <td class="val">Zadaný (Zasnouben s Arwen Undómiel)</td>
+                </tr>
+                <tr>
+                  <td class="label">Orientace:</td>
+                  <td class="val">Hetero</td>
+                </tr>
+                <tr>
+                  <td class="label">Členem od:</td>
+                  <td class="val">25. T.V. 2931</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <!-- Secondary Image Showcase -->
+          <div class="profile-box">
+            <div class="profile-box-header">Fotografie ze stezky</div>
+            <div class="profile-box-content" style="text-align: center;">
+              <img src="images/aragorn_pipe.jpg" alt="Aragorn odpočívá s dýmkou u ohně" style="width: 100%; border: 1px solid #4a382a;">
+              <div style="font-size: 10px; color: #9e8e7c; margin-top: 4px;">U Hůrky v hostinci U Skákavého poníka</div>
+            </div>
+          </div>
+
+          <!-- Interests Box -->
+          <div class="profile-box">
+            <div class="profile-box-header">Aragornovy Zájmy</div>
+            <div class="profile-box-content">
+              <table class="info-table">
+                <tr>
+                  <td class="label">Koníčky:</td>
+                  <td class="val">Stopování, boj se mečem, kouření dýmkového koření, ochrana Severu</td>
+                </tr>
+                <tr>
+                  <td class="label">Oblíbená hudba:</td>
+                  <td class="val">Elfské balady, Zpěvy o Berenovi a Lúthien</td>
+                </tr>
+                <tr>
+                  <td class="label">Oblíbené knihy:</td>
+                  <td class="val">Kroniky Númenoru, Červená kniha Západozemí</td>
+                </tr>
+                <tr>
+                  <td class="label">Zbraň:</td>
+                  <td class="val">Andúril (Plamen Západu), kuše, hraničářský nůž</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </td>
+
+        <!-- RIGHT COLUMN -->
+        <td class="right-col">
+
+          <!-- Myspace Song Player Widget -->
+          <div class="music-player">
+            <div class="player-title">&#9835; Hrající skladba: Howard Shore - The Fellowship Theme / Concerning Hobbits &#9834;</div>
+            <div class="player-controls">
+              <button style="font-size:9px; background:#4a382a; color:#fff; border:1px solid #775c46;">&#9654; PLAY</button>
+              <button style="font-size:9px; background:#4a382a; color:#fff; border:1px solid #775c46;">&#9646;&#9646; PAUSE</button>
+              <button style="font-size:9px; background:#4a382a; color:#fff; border:1px solid #775c46;">&#9632; STOP</button>
+              <span style="margin-left:10px; color:#8bb38a;">02:45 / 03:55</span>
+            </div>
+          </div>
+
+          <!-- Status Headline -->
+          <div class="status-headline">
+            Aragorn je právě... v Divočině a hlídá hranice před skřety. &#128481;
+          </div>
+
+          <!-- Blurbs Section -->
+          <div class="profile-box">
+            <div class="profile-box-header">Aragornovy Blurbs (O mně)</div>
+            <div class="profile-box-content">
+
+              <div class="blurb-heading">O mně:</div>
+              <p style="margin-top: 2px; line-height: 1.4;">
+                Zdravím. Jsem Aragorn, syn Arathornův, přímý potomek Isildura a dědic gondorského trůnu.
+                Většinu života trávím v divočině jako hraničář z Dúnadanů. Lidé na severu me znají pod jménem <strong>Chodec</strong> (Strider).
+                Střežím hranice krajiny před stíny Mordoru, aby prostý lid moh žít v míru a bezpečí.
+              </p>
+              <p style="line-height: 1.4;">
+                Mým domovem jsou lesy, hory a starobylé ruiny. Věřím v naději (Estel) a v to, že i ten nejmenší tvor může změnit chod budoucnosti.
+              </p>
+
+              <div class="blurb-heading">Koho bych rád potkal:</div>
+              <p style="margin-top: 2px; line-height: 1.4;">
+                Všechny věrné přátele Svobodných národů Středozemě. Ty, kteří se nebojí postavit temnotě a zůstávají věrní svým přísahám.
+                A především mou milovanou <strong>Arwen Undómiel</strong>, Večernici elfského lidu.
+              </p>
+
+            </div>
+          </div>
+
+          <!-- Friends Space (Top Friends) -->
+          <div class="profile-box">
+            <div class="profile-box-header">Aragornův prostor pro přátele (Top Friends)</div>
+            <div class="profile-box-content">
+              <p style="margin-top:2px; font-weight:bold; color:#a39277;">
+                Aragorn má <span style="color:#8bb38a;">5</span> přátel v síti (a 1 čekající žádost).
+              </p>
+
+              <div class="friends-grid">
+
+                <!-- Friend 1: Arwen -->
+                <div class="friend-card">
+                  <div class="friend-name"><a href="#">Arwen</a></div>
+                  <div style="width:80px; height:80px; background:#38281d; margin:3px auto; display:flex; align-items:center; justify-content:center; border:1px solid #574030; color:#e5d4c0; font-size:24px;">
+                    &#129505;
+                  </div>
+                  <span style="font-size:9px; color:#8c7b6c;">Večernice</span>
+                </div>
+
+                <!-- Friend 2: Gandalf -->
+                <div class="friend-card">
+                  <div class="friend-name"><a href="#">Gandalf</a></div>
+                  <div style="width:80px; height:80px; background:#2b3d2f; margin:3px auto; display:flex; align-items:center; justify-content:center; border:1px solid #415746; color:#8bb38a; font-size:24px;">
+                    &#129497;
+                  </div>
+                  <span style="font-size:9px; color:#8c7b6c;">Šedý / Bílý</span>
+                </div>
+
+                <!-- Friend 3: Frodo -->
+                <div class="friend-card">
+                  <div class="friend-name"><a href="#">Frodo</a></div>
+                  <div style="width:80px; height:80px; background:#38281d; margin:3px auto; display:flex; align-items:center; justify-content:center; border:1px solid #574030; color:#e5d4c0; font-size:24px;">
+                    &#128189;
+                  </div>
+                  <span style="font-size:9px; color:#8c7b6c;">Nositeľ prstenu</span>
+                </div>
+
+                <!-- Friend 4: Sam -->
+                <div class="friend-card">
+                  <div class="friend-name"><a href="#">Sam</a></div>
+                  <div style="width:80px; height:80px; background:#2b3d2f; margin:3px auto; display:flex; align-items:center; justify-content:center; border:1px solid #415746; color:#8bb38a; font-size:24px;">
+                    &#127801;
+                  </div>
+                  <span style="font-size:9px; color:#8c7b6c;">Křepelka</span>
+                </div>
+
+                <!-- Friend 5: Elrond -->
+                <div class="friend-card">
+                  <div class="friend-name"><a href="#">Elrond</a></div>
+                  <div style="width:80px; height:80px; background:#38281d; margin:3px auto; display:flex; align-items:center; justify-content:center; border:1px solid #574030; color:#e5d4c0; font-size:24px;">
+                    &#127984;
+                  </div>
+                  <span style="font-size:9px; color:#8c7b6c;">Pán Roklinky</span>
+                </div>
+
+              </div>
+
+              <!-- Pending notification sub-box -->
+              <div style="margin-top: 15px; padding: 6px; background: #281d15; border: 1px solid #4a3728; font-size: 11px;">
+                <strong>Čekající žádosti o přátelství:</strong><br>
+                &bull; <a href="#">Eowyn</a> z Rohanu poslala žádost o přátelství (Čeká na schválení).
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Comments Section -->
+          <div class="profile-box">
+            <div class="profile-box-header">Komentáře přátel uživatele Aragorn</div>
+            <div class="profile-box-content">
+              <p style="margin-top:2px;">Zobrazeno <strong>2</strong> z 2 komentářů (<a href="#">Napsat komentář</a>)</p>
+
+              <table class="comment-table">
+                <tr>
+                  <td class="comment-author">
+                    <a href="#">Arwen</a><br>
+                    <div style="width:50px; height:50px; background:#3e2723; margin:4px auto; border:1px solid #6b4c38; font-size:20px; line-height:50px;">&#127801;</div>
+                  </td>
+                  <td class="comment-body">
+                    <div class="comment-date">24.10.2005 14:22</div>
+                    Namárië, můj drahý Esteli. Ať tě hvězdy Elbereth chrání na tvých cestách v divočině. Myslím na tebe v Roklince. &#10084;
+                  </td>
+                </tr>
+                <tr>
+                  <td class="comment-author">
+                    <a href="#">Legolas</a><br>
+                    <div style="width:50px; height:50px; background:#1b3322; margin:4px auto; border:1px solid #364a38; font-size:20px; line-height:50px;">&#127993;</div>
+                  </td>
+                  <td class="comment-body">
+                    <div class="comment-date">20.10.2005 09:15</div>
+                    Chodče! Sleduji stopy skřetů směrem k západu. Až dokončíš obchůzku u Hůrky, setkáme se u Větrova. Mé luky jsou připraveny!
+                  </td>
+                </tr>
+              </table>
+
+            </div>
+          </div>
+
+        </td>
+      </tr>
+    </table>
+
+    <div class="myspace-footer">
+      <p>Copyright &copy; 2005 MySpace.com. Všechna práva vyhrazena. Středozemě Edice.</p>
+    </div>
+  </div>
+
+</body>
+</html>
