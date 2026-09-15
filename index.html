@@ -326,7 +326,13 @@
           <div class="user-name">Aragorn, syn Arathornův</div>
 
           <!-- Primary Profile Picture -->
-          <img src="images/aragorn_portrait.jpg" alt="Aragorn" class="profile-pic">
+          <div id="aragorn-pic-container" style="position: relative; display: inline-block; width: 100%; max-width: 280px; overflow: hidden;">
+            <img src="images/aragorn_portrait.jpg" alt="Aragorn" class="profile-pic" style="width: 100%; margin-bottom: 0;">
+          </div>
+
+          <button id="throw-axe-btn" style="width: 100%; max-width: 284px; margin-top: 6px; margin-bottom: 10px; background: #6e2723; color: #ffffff; border: 1px solid #a33d3d; padding: 7px; font-weight: bold; font-size: 11px; cursor: pointer; display: block; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.4);">
+            &#129683; Hodit sekeru na Aragorna
+          </button>
 
           <p style="margin: 5px 0 10px 0; font-style: italic; color: #a99a8b;">
             "Not all those who wander are lost."
@@ -434,13 +440,14 @@
 
           <!-- Myspace Song Player Widget -->
           <div class="music-player">
-            <div class="player-title">&#9835; Hrající skladba: Howard Shore - The Fellowship Theme / Concerning Hobbits &#9834;</div>
+            <div class="player-title">&#9835; Hrající skladba: Howard Shore - The Bridge of Khazad-dûm &#9834;</div>
             <div class="player-controls">
-              <button style="font-size:9px; background:#4a382a; color:#fff; border:1px solid #775c46;">&#9654; PLAY</button>
-              <button style="font-size:9px; background:#4a382a; color:#fff; border:1px solid #775c46;">&#9646;&#9646; PAUSE</button>
-              <button style="font-size:9px; background:#4a382a; color:#fff; border:1px solid #775c46;">&#9632; STOP</button>
-              <span style="margin-left:10px; color:#8bb38a;">02:45 / 03:55</span>
+              <button id="btn-play" style="font-size:9px; background:#4a382a; color:#fff; border:1px solid #775c46; cursor:pointer;">&#9654; PLAY</button>
+              <button id="btn-pause" style="font-size:9px; background:#4a382a; color:#fff; border:1px solid #775c46; cursor:pointer;">&#9646;&#9646; PAUSE</button>
+              <button id="btn-stop" style="font-size:9px; background:#4a382a; color:#fff; border:1px solid #775c46; cursor:pointer;">&#9632; STOP</button>
+              <span id="player-timer" style="margin-left:10px; color:#8bb38a;">00:00 / 00:00</span>
             </div>
+            <audio id="bg-audio" src="audio/bridge_of_khaza_dum.mp3" preload="metadata"></audio>
           </div>
 
           <!-- Status Headline -->
@@ -485,45 +492,35 @@
                 <!-- Friend 1: Arwen -->
                 <div class="friend-card">
                   <div class="friend-name"><a href="#">Arwen</a></div>
-                  <div style="width:80px; height:80px; background:#38281d; margin:3px auto; display:flex; align-items:center; justify-content:center; border:1px solid #574030; color:#e5d4c0; font-size:24px;">
-                    &#129505;
-                  </div>
+                  <img src="images/arwen.svg" alt="Arwen">
                   <span style="font-size:9px; color:#8c7b6c;">Večernice</span>
                 </div>
 
                 <!-- Friend 2: Gandalf -->
                 <div class="friend-card">
                   <div class="friend-name"><a href="#">Gandalf</a></div>
-                  <div style="width:80px; height:80px; background:#2b3d2f; margin:3px auto; display:flex; align-items:center; justify-content:center; border:1px solid #415746; color:#8bb38a; font-size:24px;">
-                    &#129497;
-                  </div>
+                  <img src="images/gandalf.svg" alt="Gandalf">
                   <span style="font-size:9px; color:#8c7b6c;">Šedý / Bílý</span>
                 </div>
 
                 <!-- Friend 3: Frodo -->
                 <div class="friend-card">
                   <div class="friend-name"><a href="#">Frodo</a></div>
-                  <div style="width:80px; height:80px; background:#38281d; margin:3px auto; display:flex; align-items:center; justify-content:center; border:1px solid #574030; color:#e5d4c0; font-size:24px;">
-                    &#128189;
-                  </div>
+                  <img src="images/frodo.svg" alt="Frodo">
                   <span style="font-size:9px; color:#8c7b6c;">Nositel Prstenu</span>
                 </div>
 
                 <!-- Friend 4: Sam -->
                 <div class="friend-card">
                   <div class="friend-name"><a href="#">Sam</a></div>
-                  <div style="width:80px; height:80px; background:#2b3d2f; margin:3px auto; display:flex; align-items:center; justify-content:center; border:1px solid #415746; color:#8bb38a; font-size:24px;">
-                    &#127801;
-                  </div>
+                  <img src="images/sam.svg" alt="Sam">
                   <span style="font-size:9px; color:#8c7b6c;">Křepelka</span>
                 </div>
 
                 <!-- Friend 5: Elrond -->
                 <div class="friend-card">
                   <div class="friend-name"><a href="#">Elrond</a></div>
-                  <div style="width:80px; height:80px; background:#38281d; margin:3px auto; display:flex; align-items:center; justify-content:center; border:1px solid #574030; color:#e5d4c0; font-size:24px;">
-                    &#127984;
-                  </div>
+                  <img src="images/elrond.svg" alt="Elrond">
                   <span style="font-size:9px; color:#8c7b6c;">Pán Roklinky</span>
                 </div>
 
@@ -548,7 +545,7 @@
                 <tr>
                   <td class="comment-author">
                     <a href="#">Arwen</a><br>
-                    <div style="width:50px; height:50px; background:#3e2723; margin:4px auto; border:1px solid #6b4c38; font-size:20px; line-height:50px;">&#127801;</div>
+                    <img src="images/arwen.svg" alt="Arwen">
                   </td>
                   <td class="comment-body">
                     <div class="comment-date">24.10.2005 14:22</div>
@@ -558,7 +555,7 @@
                 <tr>
                   <td class="comment-author">
                     <a href="#">Legolas</a><br>
-                    <div style="width:50px; height:50px; background:#1b3322; margin:4px auto; border:1px solid #364a38; font-size:20px; line-height:50px;">&#127993;</div>
+                    <img src="images/legolas.svg" alt="Legolas">
                   </td>
                   <td class="comment-body">
                     <div class="comment-date">20.10.2005 09:15</div>
@@ -579,5 +576,139 @@
     </div>
   </div>
 
+  <script>
+    // --- AXE THROWING LOGIC & AUDIO SYNTHESIS ---
+    function playAxeHitSound() {
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+        const ctx = new AudioCtx();
+
+        // Noise buffer for impact clatter
+        const bufferSize = ctx.sampleRate * 0.3;
+        const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+        const data = buffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * 0.05));
+        }
+
+        const noise = ctx.createBufferSource();
+        noise.buffer = buffer;
+
+        const filter = ctx.createBiquadFilter();
+        filter.type = 'bandpass';
+        filter.frequency.value = 800;
+        filter.Q.value = 3;
+
+        const noiseGain = ctx.createGain();
+        noiseGain.gain.setValueAtTime(0.8, ctx.currentTime);
+        noiseGain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+
+        noise.connect(filter);
+        filter.connect(noiseGain);
+        noiseGain.connect(ctx.destination);
+
+        // Low tone thud
+        const osc = ctx.createOscillator();
+        const oscGain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(160, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(30, ctx.currentTime + 0.2);
+
+        oscGain.gain.setValueAtTime(1.0, ctx.currentTime);
+        oscGain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.25);
+
+        osc.connect(oscGain);
+        oscGain.connect(ctx.destination);
+
+        // Ring
+        const ring = ctx.createOscillator();
+        const ringGain = ctx.createGain();
+        ring.type = 'sine';
+        ring.frequency.setValueAtTime(1100, ctx.currentTime);
+        ringGain.gain.setValueAtTime(0.3, ctx.currentTime);
+        ringGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.35);
+
+        ring.connect(ringGain);
+        ringGain.connect(ctx.destination);
+
+        noise.start();
+        osc.start();
+        ring.start();
+
+        noise.stop(ctx.currentTime + 0.3);
+        osc.stop(ctx.currentTime + 0.25);
+        ring.stop(ctx.currentTime + 0.35);
+      } catch (e) {
+        console.error("Audio error:", e);
+      }
+    }
+
+    document.getElementById('throw-axe-btn').addEventListener('click', function() {
+      playAxeHitSound();
+
+      const container = document.getElementById('aragorn-pic-container');
+      const axe = document.createElement('img');
+      axe.src = 'images/axe.svg';
+      axe.alt = 'Sekera';
+
+      const containerWidth = container.clientWidth || 280;
+      const containerHeight = container.clientHeight || 350;
+
+      const axeSize = 55;
+      const posX = Math.floor(Math.random() * Math.max(10, containerWidth - axeSize));
+      const posY = Math.floor(Math.random() * Math.max(10, containerHeight - axeSize));
+      const rotation = Math.floor(Math.random() * 90) - 45;
+
+      axe.style.position = 'absolute';
+      axe.style.left = posX + 'px';
+      axe.style.top = posY + 'px';
+      axe.style.width = axeSize + 'px';
+      axe.style.height = axeSize + 'px';
+      axe.style.transform = `rotate(${rotation}deg)`;
+      axe.style.pointerEvents = 'none';
+      axe.style.filter = 'drop-shadow(2px 3px 3px rgba(0,0,0,0.8))';
+      axe.style.zIndex = '10';
+
+      container.appendChild(axe);
+    });
+
+    // --- MUSIC PLAYER LOGIC ---
+    const audio = document.getElementById('bg-audio');
+    const playBtn = document.getElementById('btn-play');
+    const pauseBtn = document.getElementById('btn-pause');
+    const stopBtn = document.getElementById('btn-stop');
+    const timerDisplay = document.getElementById('player-timer');
+
+    function formatTime(seconds) {
+      if (isNaN(seconds)) return "00:00";
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return (mins < 10 ? "0" + mins : mins) + ":" + (secs < 10 ? "0" + secs : secs);
+    }
+
+    function updateTimer() {
+      const current = formatTime(audio.currentTime);
+      const duration = formatTime(audio.duration);
+      timerDisplay.textContent = `${current} / ${duration}`;
+    }
+
+    playBtn.addEventListener('click', function() {
+      audio.play();
+    });
+
+    pauseBtn.addEventListener('click', function() {
+      audio.pause();
+    });
+
+    stopBtn.addEventListener('click', function() {
+      audio.pause();
+      audio.currentTime = 0;
+      updateTimer();
+    });
+
+    audio.addEventListener('timeupdate', updateTimer);
+    audio.addEventListener('loadedmetadata', updateTimer);
+  </script>
 </body>
 </html>
