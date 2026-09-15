@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <radialGradient id="bg-elrond" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2d3b4e"/>
+      <stop offset="100%" stop-color="#121a24"/>
+    </radialGradient>
+  </defs>
+  <rect width="100" height="100" rx="10" fill="url(#bg-elrond)"/>
+  <circle cx="50" cy="50" r="45" stroke="#5a7391" stroke-width="1.5" fill="none"/>
+
+  <!-- Long dark hair -->
+  <path d="M 22 40 C 20 75, 28 95, 32 100 L 68 100 C 72 95, 80 75, 78 40 Z" fill="#181311"/>
+
+  <!-- Noble Face -->
+  <path d="M 33 36 C 33 24, 67 24, 67 36 C 67 58, 62 70, 50 72 C 38 70, 33 58, 33 36 Z" fill="#f5dcd0"/>
+
+  <!-- Hair front sides -->
+  <path d="M 25 35 C 32 20, 68 20, 75 35 C 68 28, 32 28, 25 35 Z" fill="#181311"/>
+
+  <!-- Silver Circlet -->
+  <path d="M 33 32 Q 50 37 67 32" stroke="#d0dce8" stroke-width="2" fill="none"/>
+  <polygon points="50,28 53,34 50,38 47,34" fill="#e3f0fc"/>
+
+  <!-- Piercing Wise Eyes -->
+  <ellipse cx="43" cy="43" rx="3" ry="2" fill="#203328"/>
+  <ellipse cx="57" cy="43" rx="3" ry="2" fill="#203328"/>
+  <circle cx="44" cy="42" r="0.8" fill="#fff"/>
+  <circle cx="58" cy="42" r="0.8" fill="#fff"/>
+
+  <!-- Eyebrows -->
+  <path d="M 38 39 Q 43 37 47 40" stroke="#2b201a" stroke-width="1.2" fill="none"/>
+  <path d="M 53 40 Q 57 37 62 39" stroke="#2b201a" stroke-width="1.2" fill="none"/>
+
+  <!-- Calm Mouth -->
+  <path d="M 44 58 Q 50 60 56 58" stroke="#a86860" stroke-width="1.5" fill="none"/>
+</svg>

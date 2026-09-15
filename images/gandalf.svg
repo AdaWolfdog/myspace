@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <radialGradient id="bg-gandalf" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3d4f5c"/>
+      <stop offset="100%" stop-color="#18232c"/>
+    </radialGradient>
+    <linearGradient id="hat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a6b7c"/>
+      <stop offset="100%" stop-color="#2c3742"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="10" fill="url(#bg-gandalf)"/>
+  <circle cx="50" cy="50" r="45" stroke="#688299" stroke-width="1.5" fill="none"/>
+
+  <!-- Beard back -->
+  <path d="M 28 50 C 20 80, 35 100, 50 100 C 65 100, 80 80, 72 50 Z" fill="#e6e6e6"/>
+
+  <!-- Face -->
+  <path d="M 36 38 C 36 28, 64 28, 64 38 C 64 52, 60 62, 50 63 C 40 62, 36 52, 36 38 Z" fill="#ebd2be"/>
+
+  <!-- Eyes -->
+  <circle cx="43" cy="44" r="2" fill="#222"/>
+  <circle cx="57" cy="44" r="2" fill="#222"/>
+
+  <!-- Eyebrows (bushy) -->
+  <path d="M 37 40 Q 43 35 48 41" stroke="#cccccc" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M 52 41 Q 57 35 63 40" stroke="#cccccc" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+  <!-- Nose -->
+  <path d="M 50 43 L 48 52 L 52 52" stroke="#d4b298" stroke-width="1.5" fill="none"/>
+
+  <!-- Mustache and big beard details -->
+  <path d="M 32 50 C 40 55, 48 58, 50 58 C 52 58, 60 55, 68 50 C 72 65, 65 95, 50 98 C 35 95, 28 65, 32 50 Z" fill="#f0f0f0"/>
+  <path d="M 40 53 Q 50 60 60 53" stroke="#d9d9d9" stroke-width="2" fill="none"/>
+
+  <!-- Wizard Hat -->
+  <path d="M 18 36 Q 50 28 82 36 Q 50 32 18 36 Z" fill="#2c3742"/>
+  <path d="M 25 34 C 35 25, 42 5, 52 2 C 54 20, 65 25, 75 34 Z" fill="url(#hat)"/>
+</svg>

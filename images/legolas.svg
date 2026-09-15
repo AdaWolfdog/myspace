@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <radialGradient id="bg-legolas" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2a3d2c"/>
+      <stop offset="100%" stop-color="#111c12"/>
+    </radialGradient>
+  </defs>
+  <rect width="100" height="100" rx="10" fill="url(#bg-legolas)"/>
+  <circle cx="50" cy="50" r="45" stroke="#527855" stroke-width="1.5" fill="none"/>
+
+  <!-- Long blonde hair back -->
+  <path d="M 22 40 C 20 75, 28 95, 32 100 L 68 100 C 72 95, 80 75, 78 40 Z" fill="#e3c878"/>
+
+  <!-- Face -->
+  <path d="M 34 36 C 34 24, 66 24, 66 36 C 66 56, 61 68, 50 70 C 39 68, 34 56, 34 36 Z" fill="#fce4d4"/>
+
+  <!-- Golden hair braids / front -->
+  <path d="M 26 35 C 34 22, 66 22, 74 35 C 66 27, 34 27, 26 35 Z" fill="#f0d888"/>
+  <path d="M 30 38 Q 28 55 35 70" stroke="#d6b85c" stroke-width="2" fill="none"/>
+  <path d="M 70 38 Q 72 55 65 70" stroke="#d6b85c" stroke-width="2" fill="none"/>
+
+  <!-- Sharp Blue Eyes -->
+  <ellipse cx="43" cy="43" rx="3" ry="2.2" fill="#2b6b88"/>
+  <ellipse cx="57" cy="43" rx="3" ry="2.2" fill="#2b6b88"/>
+  <circle cx="44" cy="42" r="0.8" fill="#fff"/>
+  <circle cx="58" cy="42" r="0.8" fill="#fff"/>
+
+  <!-- Subtle mouth -->
+  <path d="M 44 58 Q 50 61 56 58" stroke="#b87268" stroke-width="1.5" fill="none"/>
+</svg>
