@@ -330,9 +330,14 @@
             <img src="images/aragorn_portrait.jpg" alt="Aragorn" class="profile-pic" style="width: 100%; margin-bottom: 0;">
           </div>
 
-          <button id="throw-axe-btn" style="width: 100%; max-width: 284px; margin-top: 6px; margin-bottom: 10px; background: #6e2723; color: #ffffff; border: 1px solid #a33d3d; padding: 7px; font-weight: bold; font-size: 11px; cursor: pointer; display: block; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.4);">
-            &#129683; Hodit sekeru na Aragorna
-          </button>
+          <div style="display: flex; gap: 5px; width: 100%; max-width: 284px; margin-top: 6px; margin-bottom: 10px;">
+            <button id="throw-axe-btn" style="flex: 1; background: #6e2723; color: #ffffff; border: 1px solid #a33d3d; padding: 7px; font-weight: bold; font-size: 11px; cursor: pointer; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.4);">
+              &#129683; Hodit sekeru
+            </button>
+            <button id="clear-axes-btn" style="flex: 1; background: #3d2b1f; color: #ffffff; border: 1px solid #574030; padding: 7px; font-weight: bold; font-size: 11px; cursor: pointer; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.4);">
+              &#10006; Odstranit sekery
+            </button>
+          </div>
 
           <p style="margin: 5px 0 10px 0; font-style: italic; color: #a99a8b;">
             "Not all those who wander are lost."
@@ -643,6 +648,12 @@
         console.error("Audio error:", e);
       }
     }
+
+    document.getElementById('clear-axes-btn').addEventListener('click', function() {
+      const container = document.getElementById('aragorn-pic-container');
+      const axes = container.querySelectorAll('img[alt="Sekera"]');
+      axes.forEach(axe => axe.remove());
+    });
 
     document.getElementById('throw-axe-btn').addEventListener('click', function() {
       playAxeHitSound();
