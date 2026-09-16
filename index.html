@@ -287,6 +287,36 @@
       margin-bottom: 4px;
     }
 
+    /* Ammo Out Overlay */
+    @keyframes blinkWarning {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.1; }
+    }
+    #no-ammo-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.75);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      pointer-events: none;
+    }
+    #no-ammo-text {
+      color: #ff0000;
+      font-size: 64px;
+      font-weight: 900;
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform: uppercase;
+      text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
+      animation: blinkWarning 0.5s infinite;
+      letter-spacing: 4px;
+      text-align: center;
+    }
+
     /* Footer */
     .myspace-footer {
       text-align: center;
@@ -315,6 +345,11 @@
       <button class="alert-btn" onclick="alert('Žádost přijata!')">Přijmout</button>
       <button class="alert-btn" onclick="alert('Žádost zamítnuta.')">Odmítnout</button>
     </div>
+  </div>
+
+  <!-- Full-page flashing "Došly náboje" warning overlay -->
+  <div id="no-ammo-overlay">
+    <div id="no-ammo-text">DOŠLY NÁBOJE</div>
   </div>
 
   <!-- Main Profile Container -->
@@ -655,14 +690,30 @@
       }
     }
 
+    let axeCount = 0;
+    const MAX_AXES = 100;
+    const noAmmoOverlay = document.getElementById('no-ammo-overlay');
+
     document.getElementById('clear-axes-btn').addEventListener('click', function() {
       const container = document.getElementById('aragorn-pic-container');
       const axes = container.querySelectorAll('img[alt="Sekera"]');
       axes.forEach(axe => axe.remove());
+      axeCount = 0;
+      noAmmoOverlay.style.display = 'none';
     });
 
     document.getElementById('throw-axe-btn').addEventListener('click', function() {
+      if (axeCount >= MAX_AXES) {
+        noAmmoOverlay.style.display = 'flex';
+        return;
+      }
+
       playAxeHitSound();
+      axeCount++;
+
+      if (axeCount >= MAX_AXES) {
+        noAmmoOverlay.style.display = 'flex';
+      }
 
       const container = document.getElementById('aragorn-pic-container');
       const axe = document.createElement('img');
